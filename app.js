@@ -15,7 +15,6 @@ app.set("views", path.join(__dirname, "views"));
 // Body parser middleware (MUST come before routes)
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 app.use("/", pageRoutes);
 
 app.listen(port, () => {
