@@ -1,22 +1,26 @@
+<!-- views/pages/events.ejs -->
 <!-- Include Header -->
 <%- include('../partials/header.ejs') %>
 <body>
-  <h1><%= message %></h1>
-  <h2>Upcoming Events:</h2>
-  <% if (events.length > 0) { %>
-    <ul>
-      <% events.forEach(function(event) { %>
-        <li>
-          <h3><%= event.title %></h3>
-          <p>Date: <%= event.date %></p>
-          <p>Time: <%= event.time %></p>
-          <p>Description: <%= event.description %></p>
-        </li>
-      <% }); %>
-    </ul>
-  <% } else { %>
-    <p>No upcoming events.</p>
-  <% } %>
+    <h1><%= message %></h1>
+    <h2>Upcoming Events</h2>
+    <div class="events">
+        <% events.forEach(function(event) { %>
+            <div class="event">
+                <h3><%= event.name %></h3>
+                <p>Date: <%= event.date %></p>
+                <p>Time: <%= event.time %></p>
+                <p>Location: <%= event.location %></p>
+            </div>
+        <% }); %>
+    </div>
+    <form method="post" action="/events">
+        <input type="text" name="name" placeholder="Event name">
+        <input type="text" name="date" placeholder="Event date">
+        <input type="text" name="time" placeholder="Event time">
+        <input type="text" name="location" placeholder="Event location">
+        <button type="submit">Add event</button>
+    </form>
 </body>
 </html>
 

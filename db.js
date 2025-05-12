@@ -1,13 +1,26 @@
-// db.js
+const { MongoClient, ServerApiVersion } = require("mongodb");
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/events', { useNewUrlParser: true, useUnifiedTopology: true });
+// MongoClient connection code
+const uri = "mongodb+srv://jeansmit25973:DQqMvbiANNDqRZeo@cluster0.wbvnjzw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('Connected to MongoDB');
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
 });
 
-module.exports = db;
+async function run() {
+  try {
+    await client.connect();
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    await client.close();
+  }
+}
+
+run().catch(console.dir);
+

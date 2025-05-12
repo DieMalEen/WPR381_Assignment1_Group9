@@ -2,9 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Event = require('../models/event');
-
-
+const Event = require('../event');
 
 // In-memory array to store conract page messages and details
 const submissions = [];
@@ -27,57 +25,25 @@ router.get('/about', (req, res) => {
     });
 });
 
-// Events(old)
-// router.get('/events', (req, res) => {
-//     res.render('pages/events', { 
-//         title: 'Events', 
-//         message: 'Welcome to the Events Page', 
-//         currentPage: '/events'
-//     });
-// });
-
 // Events
-router.get('/events', async (req, res) => {
-  try {
-    const events = await Event.find().exec();
-    console.log(events);
-    res.render('pages/events', { 
-      title: 'Events', 
-      message: 'Welcome to the Events Page', 
-      currentPage: '/events',
-      events: events
+router.get('/events', (req, res) => {
+    Event.find().then(events => {
+        res.render('pages/events', { 
+            title: 'Events', 
+            message: 'Welcome to the Events Page', 
+            currentPage: '/events',
+            events: events
+        });
     });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error retrieving events');
-  }
-});
-
-router.get('/addevent', (req, res) => {
-  res.render('pages/addevent', { 
-    title: 'Add a New Event', 
-    message: 'Add a new event', 
-    currentPage: '/addevent'
-  });
 });
 
 // Add a new event
-router.post('/events', async (req, res) => {
-  try {
-    const event = new Event({
-      title: req.body.title,
-      date: req.body.date,
-      time: req.body.time,
-      description: req.body.description
+router.post('/events', (req, res) => {
+    const event = new Event(req.body);
+    event.save().then(() => {
+        res.redirect('/events');
     });
-    await event.save();
-    res.redirect('/events');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error adding event');
-  }
 });
-
 
 // Contact
 router.get('/contact', (req, res) => {
