@@ -1,0 +1,21 @@
+<!-- partials/header.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+  <header>
+    <h1>Company Events</h1>
+    <nav>
+        <a href="/" class="<%= currentPage === '/' ? 'active' : '' %>">Home</a>
+        <a href="/about" class="<%= currentPage === '/about' ? 'active' : '' %>">About</a>
+        <a href="/events" class="<%= currentPage === '/events' ? 'active' : '' %>">Events</a>
+        <a href="/contact" class="<%= currentPage === '/contact' ? 'active' : '' %>">Contact</a>
+    </nav>
+  </header>
+</body>
+</html>
