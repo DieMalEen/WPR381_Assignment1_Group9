@@ -3,6 +3,10 @@
 const express = require('express');
 const router = express.Router();
 
+// In-memory array to store conract page messages and details
+const submissions = [];
+
+// Home
 router.get('/', (req, res) => {
     res.render('pages/home', { 
         title: 'Home', 
@@ -11,6 +15,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// About
 router.get('/about', (req, res) => {
     res.render('pages/about', { 
         title: 'About', 
@@ -19,6 +24,7 @@ router.get('/about', (req, res) => {
     });
 });
 
+// Events
 router.get('/events', (req, res) => {
     res.render('pages/events', { 
         title: 'Events', 
@@ -27,6 +33,7 @@ router.get('/events', (req, res) => {
     });
 });
 
+// Contact
 router.get('/contact', (req, res) => {
     res.render('pages/contact', { 
         title: 'Contact', 
@@ -35,15 +42,37 @@ router.get('/contact', (req, res) => {
     });
 });
 
+// Post from Contact to Thankyou
 router.post('/thankyou', (req, res) => {
     const { name, email, message } = req.body;
     
+    if (!name || !email || !message) {
+        return res.status(400).send("All fields are required.");
+    }
+
+    // Create a submission object
+    const submission = {
+        name,
+        email,
+        message,
+        timestamp: new Date().toLocaleString()
+    };
+
     res.render('pages/thankyou', { 
         title: 'Thank You', 
         currentPage: '/contact', 
         name, 
         email, 
         message });
+});
+
+// 404 - Catch All Other Routes
+router.use("*", (req, res) => {
+  res.status(404).render("pages/404", { 
+    title: "404 - Not Found", 
+    message: '404 - Page Not Found', 
+    currentPage: "" 
+    });
 });
 
 module.exports = router;

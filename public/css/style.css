@@ -40,6 +40,22 @@ main {
   border-radius: 8px;
 }
 
+.error-page {
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-page h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.error-page a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
 form {
   display: flex;
   flex-direction: column;
