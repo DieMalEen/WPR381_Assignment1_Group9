@@ -1,10 +1,42 @@
-<!-- pages\home.ejs -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title><%= title %></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Community Portal</title>
 </head>
 <body>
-  <h1><%= message %></h1>
-  <a href="/about">About</a> | <a href="/events">Events</a> | <a href="/contact">Contact</a>
+  <!-- Reusable Header (Navbar) -->
+  <%- include('../partials/header', { currentPage: 'home' }) %>
+
+  <!-- Dynamic Content -->
+  <main>
+    <h1><%= message %></h1>
+    
+    <!-- Upcoming Events Section -->
+    <section>
+      <h2>🚀 Upcoming Events</h2>
+      <% if (events.length > 0) { %>
+
+        <ul>
+          <% events.forEach(event => { %>
+            <li>
+              <strong><%= event.name %></strong> 
+              | <%= event.date %> 
+              |<%= event.location %>
+            </li>
+            <!--Runs JS logic-->
+          <% }) %>
+        </ul>
+      <% } else { %>
+           <p>No events scheduled yet. Stay tuned!</p>
+          <!--Runs JS logic--> 
+      <% } %>
+    </section>
+
+  </main>
+
+  <!-- Reusable Footer -->
+  <%- include('../partials/footer') %>
 </body>
 </html>
