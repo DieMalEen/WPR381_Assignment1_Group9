@@ -1,8 +1,16 @@
-<!-- pages\home.ejs -->
+<!-- pages\about.ejs -->
 <!-- Include Header -->
 <%- include('../partials/header.ejs') %>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
 <body>
-  <h1><%= message %></h1>
+  <section class="section">
+    <div class="container">
+      <h1 class="title"><%= message %></h1>
+      <p class="subtitle">Learn more about us!</p>
+    </div>
+  </section>
 </body>
 </html>
 

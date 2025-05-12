@@ -1,9 +1,31 @@
 <!-- pages\events.ejs -->
 <!-- Include Header -->
 <%- include('../partials/header.ejs') %>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
 <body>
-    <h1><%= message %></h1>
-    <p>Check out what's happening soon!</p>
+  <section class="section">
+    <div class="container">
+      <h1 class="title"><%= message %></h1>
+      <h2 class="subtitle">Upcoming Events</h2>
+      <div class="columns is-multiline">
+        <% events.forEach(event => { %>
+          <div class="column is-one-third">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title"><%= event.name %></p>
+              </header>
+              <div class="card-content">
+                <p class="is-size-6">Date: <%= event.date %> at <%= event.time %></p>
+                <p class="is-size-6">Location: <%= event.location %></p>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
 

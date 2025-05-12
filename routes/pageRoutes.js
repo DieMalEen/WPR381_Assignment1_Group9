@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const events = require('../data/events');
 
 // In-memory array to store conract page messages and details
 const submissions = [];
@@ -24,13 +25,14 @@ router.get('/about', (req, res) => {
     });
 });
 
-// Events
+// Events 
 router.get('/events', (req, res) => {
-    res.render('pages/events', { 
-        title: 'Events', 
-        message: 'Welcome to the Events Page', 
-        currentPage: '/events'
-    });
+  res.render('pages/events', { 
+    title: 'Events', 
+    message: 'Welcome to the Events Page', 
+    currentPage: '/events',
+    events: events // pass the events array to the template
+  });
 });
 
 // Contact

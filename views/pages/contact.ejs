@@ -1,14 +1,41 @@
 <!-- pages\contact.ejs -->
 <!-- Include Header -->
 <%- include('../partials/header.ejs') %>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
 <body>
-  <h1><%= message %></h1>
-  <form method="POST" action="/thankyou">
-  <input type="text" name="name" placeholder="Your Name" required /><br />
-  <input type="email" name="email" placeholder="Your Email" required /><br />
-  <textarea name="message" placeholder="Your Message" required></textarea><br />
-  <button type="submit">Send</button>
-</form>
+  <section class="section">
+    <div class="container">
+      <h1 class="title"><%= message %></h1>
+      <p class="subtitle">Get in touch with us!</p>
+      <form>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Your name">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="Your email">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Your message"></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button class="button is-link">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
 </body>
 </html>
 

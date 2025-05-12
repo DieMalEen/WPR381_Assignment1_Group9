@@ -4,6 +4,7 @@ body, html {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   color: #333;
+  line-height: 1.6;
 }
 
 header {
@@ -87,4 +88,43 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+
+
+.events-page ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.events-page li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  width: calc(33.33% - 20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-page li:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.events-page li .event-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.events-page li .event-date {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.events-page li .event-location {
+  font-size: 16px;
+  color: #666;
 }
