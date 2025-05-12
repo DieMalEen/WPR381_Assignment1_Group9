@@ -2,13 +2,14 @@
 
 const express = require('express');
 const router = express.Router();
+const data = require('../public/Data/data')
 
 router.get('/', (req, res) => {
     res.render('pages/home', { title: 'Home', message: 'Welcome to the Home Page' });
 });
 
 router.get('/about', (req, res) => {
-    res.render('pages/about', { title: 'About', message: 'Welcome to the About Page' });
+   res.render('pages/about', { title: 'About', organization: data.organization, team: data.team} );
 });
 
 router.get('/events', (req, res) => {
