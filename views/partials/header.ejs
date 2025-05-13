@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title><%= title %></title>
 </head>
 <body>
   <header>
-    <h1>Company Events</h1>
     <nav>
+        <h1>Company Events</h1>
         <a href="/" class="<%= currentPage === '/' ? 'active' : '' %>">Home</a>
         <a href="/about" class="<%= currentPage === '/about' ? 'active' : '' %>">About</a>
         <a href="/events" class="<%= currentPage === '/events' ? 'active' : '' %>">Events</a>
