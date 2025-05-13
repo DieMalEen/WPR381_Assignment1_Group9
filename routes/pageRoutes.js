@@ -18,12 +18,13 @@ router.get('/', (req, res) => {
 
 // About
 router.get('/about', (req, res) => {
-   res.render('pages/about', { title: 'About', organization: data.organization, team: data.team} );
+   res.render('pages/about', { title: 'About', organization: data.organization, team: data.team, currentPage: '/about'} );
+   
 });
 
 // Events 
 router.get('/events', (req, res) => {
-    res.render('pages/events', { title: 'Events', message: 'Welcome to the Events Page' });
+    res.render('pages/events', { title: 'Events', message: 'Welcome to the Events Page' , currentPage: '/events', events});
 });
 
 // Contact
