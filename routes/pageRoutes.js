@@ -1,10 +1,9 @@
 // routes/pageRoutes.js
-
 const express = require('express');
 const router = express.Router();
 const events = require('../data/events');
 
-// In-memory array to store conract page messages and details
+// In-memory array to store contract page messages and details
 const submissions = [];
 
 // Home
