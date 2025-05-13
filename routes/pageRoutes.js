@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const events = require('../data/events');
+const data = require('../public/Data/data')
 
 // In-memory array to store contract page messages and details
 const submissions = [];
@@ -17,11 +18,7 @@ router.get('/', (req, res) => {
 
 // About
 router.get('/about', (req, res) => {
-    res.render('pages/about', { 
-        title: 'About', 
-        message: 'Welcome to the About Page', 
-        currentPage: '/about'
-    });
+   res.render('pages/about', { title: 'About', organization: data.organization, team: data.team} );
 });
 
 // Events 
