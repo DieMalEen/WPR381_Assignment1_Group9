@@ -27,12 +27,7 @@ router.get('/about', (req, res) => {
 
 // Events 
 router.get('/events', (req, res) => {
-  res.render('pages/events', { 
-    title: 'Events', 
-    message: 'Welcome to the Events Page', 
-    currentPage: '/events',
-    events: events // pass the events array to the template
-  });
+    res.render('pages/events', { title: 'Events', message: 'Welcome to the Events Page' });
 });
 
 // Contact
