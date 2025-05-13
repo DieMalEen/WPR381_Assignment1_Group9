@@ -1,18 +1,34 @@
-<!-- pages\about.ejs -->
+<!-- pages\home.ejs -->
 <!-- Include Header -->
 <%- include('../partials/header.ejs') %>
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-</head>
 <body>
   <section class="section">
     <div class="container">
       <h1 class="title"><%= message %></h1>
-      <p class="subtitle">Learn more about us!</p>
+      <p class="subtitle">Welcome to our community portal!</p>
+     
+      <!-- Upcoming Events Section -->
+      <section>
+        <h2 class="title">🚀 Upcoming Events</h2>
+        <% if (events.length > 0) { %>
+          <ul>
+            <% events.forEach(event => { %>
+              <li>
+                <strong><%= event.name %></strong>
+                | <%= event.date %>
+                | <%= event.location %>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p class="subtitle">No events scheduled yet. Stay tuned!</p>
+        <% } %>
+      </section>
     </div>
   </section>
 </body>
 </html>
-
+ 
 <!-- Include Footer -->
 <%- include('../partials/footer.ejs') %>
+ 

@@ -1,7 +1,6 @@
 // routes/pageRoutes.js
 const express = require('express');
 const router = express.Router();
-const events = require('../data/events');
 const data = require('../public/Data/data')
 
 // In-memory array to store contract page messages and details
@@ -12,7 +11,8 @@ router.get('/', (req, res) => {
     res.render('pages/home', { 
         title: 'Home', 
         message: 'Welcome to the Home Page', 
-        currentPage: '/'
+        currentPage: '/',
+        events: data.events
     });
 });
 
@@ -24,7 +24,7 @@ router.get('/about', (req, res) => {
 
 // Events 
 router.get('/events', (req, res) => {
-    res.render('pages/events', { title: 'Events', message: 'Welcome to the Events Page' , currentPage: '/events', events});
+    res.render('pages/events', { title: 'Events', message: 'Welcome to the Events Page' , currentPage: '/events', events: data.events});
 });
 
 // Contact
