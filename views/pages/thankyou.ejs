@@ -1,5 +1,22 @@
 <!-- pages\thankyou.ejs -->
-<h1>Thank You, <%= name %>!</h1>
-<p>We have received your message:</p>
-<blockquote><%= message %></blockquote>
-<p>We will contact you at <%= email %> shortly.</p>
+<!-- Include Header -->
+<%- include('../partials/header.ejs') %>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Thank You!</h1>
+      <p class="subtitle">We appreciate your message!</p>
+      <div class="notification">
+        <p>We have received your message:</p>
+        <blockquote>
+          <%= message %>
+        </blockquote>
+        <p>We will contact you at <%= email %> shortly.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<!-- Include Footer -->
+<%- include('../partials/footer.ejs') %>

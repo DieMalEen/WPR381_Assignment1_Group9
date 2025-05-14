@@ -1,3 +1,33 @@
 <!-- pages\events.ejs -->
-<h1>Upcoming Events</h1>
-<p>Check out what's happening soon!</p>
+<!-- Include Header -->
+<%- include('../partials/header.ejs') %>
+<body>
+  <section class="section">
+    <div class="container">
+        <h1 class="title" style="color: white;"><%= message %></h1>
+        <h2 class="subtitle" style="color: white;">Upcoming Events</h2>
+      <div class="columns is-multiline">
+        <% events.forEach(event => { %>
+          <div class="column is-one-third" id="card-Event">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title"><%= event.name %></p>
+              </header>
+              <div class="card-content">
+                    <div class="image-container">
+                      <img src="/images/EventImages/<%= event.image %>" alt="<%= event.name %>">
+                    </div>
+                <p class="is-size-6">Date: <%= event.date %> at <%= event.time %></p>
+                <p class="is-size-6">Location: <%= event.location %></p>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<!-- Include Footer -->
+<%- include('../partials/footer.ejs') %>

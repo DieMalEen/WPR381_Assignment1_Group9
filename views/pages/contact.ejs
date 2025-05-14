@@ -1,8 +1,52 @@
 <!-- pages\contact.ejs -->
-<h1>Contact Us</h1>
-<form method="POST" action="/thankyou">
-  <input type="text" name="name" placeholder="Your Name" required /><br />
-  <input type="email" name="email" placeholder="Your Email" required /><br />
-  <textarea name="message" placeholder="Your Message" required></textarea><br />
-  <button type="submit">Send</button>
-</form>
+<!-- Include Header -->
+<%- include('../partials/header.ejs') %>
+<body>
+  <div class="container mt-5">
+    <div class="card shadow">
+      <section class="section">
+        <div class="container">
+          <h1 class="title"><%= message %></h1>
+          <p class="subtitle">Get in touch with us!</p>
+        
+          <!-- Form with POST method -->
+          <form method="POST" action="/thankyou">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="text" name="name" placeholder="Your name" required>
+              </div>
+            </div>
+          
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="email" name="email" placeholder="Your email" required>
+              </div>
+            </div>
+          
+            <div class="field">
+              <label class="label">Message</label>
+              <div class="control">
+                <textarea class="textarea" name="message" placeholder="Your message" required></textarea>
+              </div>
+            </div>
+          
+            <div class="field">
+              <div class="control">
+                <button class="button is-link" type="submit">Send</button>
+              </div>
+            </div>
+          </form>
+        
+        </div>
+      </section>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+
+<!-- Include Footer -->
+<%- include('../partials/footer.ejs') %>
