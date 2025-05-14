@@ -2,7 +2,7 @@
 
 ## Overview
 
-# Contact Form Web Application
+## Contact Form Web Application
 
 A simple web application built with **Express.js** and **EJS** that includes a contact form to collect user submissions. The application stores submissions in an in-memory array and provides a thank-you page to display the submitted data.
 
