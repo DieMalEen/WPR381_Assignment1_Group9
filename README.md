@@ -82,10 +82,12 @@ A simple web application built with **Express.js** and **EJS** that includes a c
 ---
 
 ## Setup Instructions
+
 1. Run `npm install` to install dependencies.
 2. Use `npm run dev` to start the development server with nodemon.
 
 ## Clone the repository
+
  ```bash
    git clone https://github.com/DieMalEen/WPR381_Assignment1_Group9
    cd WPR381_Assignment1_Group9

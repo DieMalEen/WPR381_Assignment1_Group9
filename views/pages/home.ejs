@@ -1,35 +1,54 @@
-<!-- pages\home.ejs -->
-<!-- Include Header -->
-<%- include('../partials/header.ejs') %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Community Portal</title>
+  <link rel="stylesheet" href="/css/homestyle.css">
+</head>
 <body>
-  <div class="container">
-    <section class="section">
-      <h1 class="title"><%= message %></h1>
-      <p class="subtitle">Welcome to our community portal!</p>
-     
-      <!-- Upcoming Events Section -->
-      <section>
-        <h2 class="title">🚀 Upcoming Events</h2>
-        <% if (events.length > 0) { %>
-          <ul>
-            <% events.forEach(event => { %>
-              <li>
-                <strong><%= event.name %></strong>
-                | <%= event.date %>
-                | <%= event.location %>
-              </li>
-            <% }) %>
-          </ul>
-        <% } else { %>
-          <p class="subtitle">No events scheduled yet. Stay tuned!</p>
-        <% } %>
-      </section>
+  <!-- Reusable Header (Navbar) -->
+  <%- include('../partials/header', { currentPage: 'home' }) %>
+  
+
+
+  <!-- Dynamic Content -->
+  <main class="content-wrapper">
+    <!-- Welcome Message Section -->
+    <div class="welcome-section">
+      <h1><%= message %></h1>
+    </div>
+    
+    <!-- Upcoming Events Section -->
+    <section class="events-section">
+      <h2>🚀 Upcoming Events</h2>
+      
+      <% if (UpcomingEvents.length > 0) { %>
+        <div class="events-list">
+          <% UpcomingEvents.forEach(event => { %>
+            <!-- Individual Event Card -->
+            <div class="event-card">
+              <h3><%= event.title %></h3>
+              <div class="event-details">
+                <!-- Event Date and Location -->
+                <span>📅 <%= event.date %></span>
+                <span>📍 <%= event.location %></span>
+              </div>
+            </div>
+            <!-- Runs JS logic -->
+          <% }) %>
+        </div>
+      <% } else { %>
+        <!-- No Events Message -->
+        <div class="no-events">
+          <p>No events scheduled yet. Stay tuned!</p>
+        </div>
+        <!-- Runs JS logic --> 
+      <% } %>
     </section>
-  </div>
+  </main>
+
+  <!-- Reusable Footer -->
+  <%- include('../partials/footer') %>
 </body>
 </html>
- 
-<!-- Include Footer -->
-<%- include('../partials/footer.ejs') %>
- 

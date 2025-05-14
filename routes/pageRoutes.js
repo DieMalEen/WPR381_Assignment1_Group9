@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
         title: 'Home', 
         message: 'Welcome to the Home Page', 
         currentPage: '/',
-        events: data.events
+        UpcomingEvents: data.events.slice(0.2)
     });
 });
 
