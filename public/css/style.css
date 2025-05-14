@@ -7,6 +7,11 @@ body, html {
   line-height: 1.6;
 }
 
+.container {
+  flex: 1;
+  padding: 1rem;
+}
+
 header {
   background-color: #333;
   padding: 1rem;
@@ -83,12 +88,10 @@ form button:hover {
 
 footer {
   background-color: #333;
-  padding: 1rem;
   color: #fff;
   text-align: center;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  padding: 1rem;
+  margin-top: auto;
 }
 
 footer nav a {

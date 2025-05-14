@@ -52,6 +52,8 @@ router.post('/thankyou', (req, res) => {
         timestamp: new Date().toLocaleString()
     };
 
+    submissions.push(submission);
+
     res.render('pages/thankyou', { 
         title: 'Thank You', 
         currentPage: '/contact', 
