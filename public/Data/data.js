@@ -1,16 +1,23 @@
 const organization = {
     name: "Community Connect Hub",
-    mission: "To foster community engagement through events and collaborative projects.",
-    vision: "To create a dynamic and inclusive platform for community members to share, learn, and grow together.",
-    values: ["Inclusivity", "Collaboration", "Innovation"]
+    mission: "To transform ideas into immersive events that inspire, entertain, and connect.",
+    vision: "To be the leading choice for unforgettable, meticulously planned events that leave lasting memories.",
+    values: [ 
+      {tile: 'Creativity:', explanation: 'Embracing innovative ideas to make each event unique.'},
+      {tile: 'Collaboration: ', explanation: 'Working closely with clients and partners to deliver seamless experiences.'},
+      {tile: 'Passion: ', explanation: 'Committing to excellence and enthusiasm in every project.'},
+      {tile: 'Professionalism: :', explanation: 'Maintaining integrity, transparency, and reliability.'},
+      {tile: 'Client-Centric: ', explanation: 'Prioritizing client needs and customizing solutions for their vision.'},
+      {tile: 'Sustainability:', explanation: 'Hosting events that are environmentally responsible and impactful.'},
+    ]
 } 
 
 
 const team = [
-    { name: "Jean Paul Smit", role: "Team Lead" },
-    { name: "Vaughn du Preez", role: "Backend Developer" },
-    { name: "Joseph Pereira", role: "Frontend Developer" },
-    { name: "Neo Polori", role: "Data Manager" }
+    { name: "Jean Paul Smit", role: "Backend Developer", image: "image3.png" },
+    { name: "Vaughn du Preez", role: "Team Lead", image: "image4.png" },
+    { name: "Joseph Pereira", role: "Data Manager", image: "image1.png" },
+    { name: "Neo Polori", role: "Frontend Developer", image: "image2.png" }
 ];
 
 // events array
