@@ -4,36 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %> | Community Portal</title>
+  <link rel="stylesheet" href="/css/homestyle.css">
 </head>
 <body>
   <!-- Reusable Header (Navbar) -->
   <%- include('../partials/header', { currentPage: 'home' }) %>
+  
+
 
   <!-- Dynamic Content -->
-  <main>
-    <h1><%= message %></h1>
+  <main class="content-wrapper">
+    <!-- Welcome Message Section -->
+    <div class="welcome-section">
+      <h1><%= message %></h1>
+    </div>
     
     <!-- Upcoming Events Section -->
-    <section>
+    <section class="events-section">
       <h2>🚀 Upcoming Events</h2>
-      <% if (events.length > 0) { %>
-
-        <ul>
-          <% events.forEach(event => { %>
-            <li>
-              <strong><%= event.name %></strong> 
-              | <%= event.date %> 
-              |<%= event.location %>
-            </li>
-            <!--Runs JS logic-->
+      
+      <% if (UpcomingEvents.length > 0) { %>
+        <div class="events-list">
+          <% UpcomingEvents.forEach(event => { %>
+            <!-- Individual Event Card -->
+            <div class="event-card">
+              <h3><%= event.title %></h3>
+              <div class="event-details">
+                <!-- Event Date and Location -->
+                <span>📅 <%= event.date %></span>
+                <span>📍 <%= event.location %></span>
+              </div>
+            </div>
+            <!-- Runs JS logic -->
           <% }) %>
-        </ul>
+        </div>
       <% } else { %>
-           <p>No events scheduled yet. Stay tuned!</p>
-          <!--Runs JS logic--> 
+        <!-- No Events Message -->
+        <div class="no-events">
+          <p>No events scheduled yet. Stay tuned!</p>
+        </div>
+        <!-- Runs JS logic --> 
       <% } %>
     </section>
-
   </main>
 
   <!-- Reusable Footer -->
