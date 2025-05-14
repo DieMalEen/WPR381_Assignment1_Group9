@@ -15,6 +15,7 @@ A simple web application built with **Express.js** and **EJS** that includes a c
 - EJS (Embedded JavaScript)
 - CSS
 - Body-Parser Middleware
+- tiiny.host
 
 ---
 
@@ -50,7 +51,7 @@ A simple web application built with **Express.js** and **EJS** that includes a c
 
 ### **About Page**
 
-- Provides information about the team or organization.  
+- Provides information about the team and organization.  
 - Data is sourced from an array in the backend and rendered using EJS templates.  
 - Includes dynamic content rendering using `<%= %>` and partials for consistent layout.  
 
@@ -77,9 +78,20 @@ A simple web application built with **Express.js** and **EJS** that includes a c
 
 - Displays a confirmation message after the form is successfully submitted.  
 - Shows the submitted data (`name`, `email`, `message`) dynamically using EJS.  
-- Provides a link to navigate back to the Contact page or Home page.  
+- Provides a link to navigate back to the Contact page or Home page.
 
 ---
+
+### **Submission**
+
+- Displays the submission array.
+- Shows all the submitted data (`name`, `email`, `message`) dynamically using EJS.  
+
+---
+
+### **404**
+
+- Displays if route is trying to be accessed that does not exist.
 
 ## Setup Instructions
 
@@ -91,3 +103,7 @@ A simple web application built with **Express.js** and **EJS** that includes a c
  ```bash
    git clone https://github.com/DieMalEen/WPR381_Assignment1_Group9
    cd WPR381_Assignment1_Group9
+
+## Hosting of website
+Community-Connect-Hub.tiiny.site
+https://github.com/DieMalEen/WPR381_Assignment1_Group9
