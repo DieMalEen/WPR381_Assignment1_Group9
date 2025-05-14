@@ -62,6 +62,15 @@ router.post('/thankyou', (req, res) => {
         message });
 });
 
+// Contact
+router.get('/submission', (req, res) => {
+    res.render('pages/submission', { 
+        title: 'submission', 
+        currentPage: '',
+        submissions
+    });
+});
+
 // 404 - Catch All Other Routes
 router.use("*", (req, res) => {
   res.status(404).render("pages/404", { 
