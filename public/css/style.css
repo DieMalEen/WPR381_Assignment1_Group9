@@ -24,6 +24,7 @@ header nav a {
 
 header nav a:hover {
   background-color: #555;
+  border-radius: 4px;
 }
 
 header nav a.active {
@@ -90,7 +91,18 @@ footer {
   bottom: 0;
 }
 
+footer nav a {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.1s;
+}
 
+footer nav a:hover {
+  color: #555;
+  border-radius: 4px;
+}
 
 .events-page ul {
   display: flex;
