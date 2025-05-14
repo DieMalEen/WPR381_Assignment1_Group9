@@ -8,7 +8,7 @@
       <h2 class="subtitle">Upcoming Events</h2>
       <div class="columns is-multiline">
         <% events.forEach(event => { %>
-          <div class="column is-one-third">
+          <div class="column is-one-third" id="card-Event">
             <div class="card">
               <header class="card-header">
                 <p class="card-header-title"><%= event.name %></p>
@@ -23,6 +23,8 @@
       </div>
     </div>
   </section>
+    <link rel="stylesheet" href="style.css">
+
 </body>
 </html>
 

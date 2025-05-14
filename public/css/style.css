@@ -144,7 +144,7 @@ footer nav a:hover {
   color: #666;
 }
 
-.value-card:hover {
+.value-card:hover, #card-Event:hover {
   filter: invert(1);
   transition: filter 0.3s ease;
 }
