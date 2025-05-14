@@ -15,7 +15,6 @@ A simple web application built with **Express.js** and **EJS** that includes a c
 - EJS (Embedded JavaScript)
 - CSS
 - Body-Parser Middleware
-- tiiny.host
 
 ---
 
@@ -103,7 +102,3 @@ A simple web application built with **Express.js** and **EJS** that includes a c
  ```bash
    git clone https://github.com/DieMalEen/WPR381_Assignment1_Group9
    cd WPR381_Assignment1_Group9
-
-## Hosting of website
-Community-Connect-Hub.tiiny.site
-https://github.com/DieMalEen/WPR381_Assignment1_Group9
