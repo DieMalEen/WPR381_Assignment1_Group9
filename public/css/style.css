@@ -14,6 +14,18 @@ body, html {
   min-height: 100vh;
 }
 
+.title {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.subtitle {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.submi
+
 .container {
   flex: 1;
   padding: 1rem;

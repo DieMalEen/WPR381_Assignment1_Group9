@@ -2,22 +2,25 @@
 <!-- This is only to show the in memory array is working -->
 <%- include('../partials/header.ejs', { title: 'Submissions' }) %>
 
-<h1>Submissions</h1>
 
-<% if (submissions.length > 0) { %>
-  <ul>
-    <% submissions.forEach((submission, index) => { %>
-      <li>
-        <strong>Submission #<%= index + 1 %></strong><br>
-        Name: <%= submission.name %><br>
-        Email: <%= submission.email %><br>
-        Message: <%= submission.message %>
-      </li>
-      <hr>
-    <% }) %>
-  </ul>
-<% } else { %>
-  <p>No submissions yet.</p>
-<% } %>
+<div class="card shadow">
+  <h1>Submissions</h1>
+
+  <% if (submissions.length > 0) { %>
+    <ul>
+      <% submissions.forEach((submission, index) => { %>
+        <li>
+          <strong>Submission #<%= index + 1 %></strong><br>
+          Name: <%= submission.name %><br>
+          Email: <%= submission.email %><br>
+          Message: <%= submission.message %>
+        </li>
+        <hr>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No submissions yet.</p>
+  <% } %>
+</div>
 
 <%- include('../partials/footer.ejs') %>
